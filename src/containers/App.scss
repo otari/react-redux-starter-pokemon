@@ -1,0 +1,168 @@
+// Core variables and mixins
+@import "~bootstrap-sass/assets/stylesheets/bootstrap/_variables";
+@import "~bootstrap-sass/assets/stylesheets/bootstrap/_mixins";
+// Reset
+@import "~bootstrap-sass/assets/stylesheets/bootstrap/_normalize";
+@import "~bootstrap-sass/assets/stylesheets/bootstrap/_print";
+// Core CSS
+@import "~bootstrap-sass/assets/stylesheets/bootstrap/_scaffolding";
+@import "~bootstrap-sass/assets/stylesheets/bootstrap/_type";
+@import "~bootstrap-sass/assets/stylesheets/bootstrap/_code";
+@import "~bootstrap-sass/assets/stylesheets/bootstrap/_grid";
+@import "~bootstrap-sass/assets/stylesheets/bootstrap/_tables";
+@import "~bootstrap-sass/assets/stylesheets/bootstrap/_forms";
+@import "~bootstrap-sass/assets/stylesheets/bootstrap/_input-groups";
+
+@import "~bootstrap-sass/assets/stylesheets/bootstrap/_buttons";
+// Components: common
+@import "~bootstrap-sass/assets/stylesheets/bootstrap/_component-animations";
+@import "~bootstrap-sass/assets/stylesheets/bootstrap/_dropdowns";
+@import "~bootstrap-sass/assets/stylesheets/bootstrap/_list-group";
+@import "~bootstrap-sass/assets/stylesheets/bootstrap/_panels";
+@import "~bootstrap-sass/assets/stylesheets/bootstrap/_wells";
+@import "~bootstrap-sass/assets/stylesheets/bootstrap/_close";
+// Components: Nav
+@import "~bootstrap-sass/assets/stylesheets/bootstrap/_navs";
+@import "~bootstrap-sass/assets/stylesheets/bootstrap/_navbar";
+@import "~bootstrap-sass/assets/stylesheets/bootstrap/_button-groups";
+//@import "~bootstrap-sass/assets/stylesheets/bootstrap/_breadcrumbs";
+@import "~bootstrap-sass/assets/stylesheets/bootstrap/_pagination";
+@import "~bootstrap-sass/assets/stylesheets/bootstrap/_pager";
+
+// Components: Popovers
+//@import "~bootstrap-sass/assets/stylesheets/bootstrap/_modals";
+@import "~bootstrap-sass/assets/stylesheets/bootstrap/_tooltip";
+@import "~bootstrap-sass/assets/stylesheets/bootstrap/_popovers";
+// Components: Misc
+@import "~bootstrap-sass/assets/stylesheets/bootstrap/_alerts";
+@import "~bootstrap-sass/assets/stylesheets/bootstrap/_thumbnails";
+//@import "~bootstrap-sass/assets/stylesheets/bootstrap/_media";
+@import "~bootstrap-sass/assets/stylesheets/bootstrap/_labels";
+//@import "~bootstrap-sass/assets/stylesheets/bootstrap/_badges";
+//@import "~bootstrap-sass/assets/stylesheets/bootstrap/_progress-bars";
+//@import "~bootstrap-sass/assets/stylesheets/bootstrap/_accordion";
+@import "~bootstrap-sass/assets/stylesheets/bootstrap/_carousel";
+@import "~bootstrap-sass/assets/stylesheets/bootstrap/_jumbotron";
+// Utility classes
+@import "~bootstrap-sass/assets/stylesheets/bootstrap/_utilities"; // Has to be last to override when necessary
+@import "~bootstrap-sass/assets/stylesheets/bootstrap/_responsive-utilities";
+
+
+html, body {
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: #333;
+  }
+  .wrap {
+    height: 100vh;
+    display: flex;
+  }
+  main {
+    flex: 1;
+    display: flex;
+  }
+  aside, article {
+    overflow-y: hidden;
+  }
+  aside {
+    width: 211px;
+    background-color:#1b1c1d;
+    transition:width .3s;
+  }
+  .rel {
+    position: relative;
+  }
+  article {
+    flex: 2;
+    .inner {
+      padding:15px;
+    }
+  }
+  .clearfix::after {
+    content:" ";
+    clear:both;
+  }
+
+
+  // @keyframes jump {
+  //   0%{
+  //       transform: translateY(0);
+  //   }
+  //   20% {
+  //       transform: translateY(-2px);
+  //   }
+  //   40% {
+  //       transform: translateY(-4px);
+  //   }
+  //   50%{
+  //       transform: translateY(-5);
+  //   }
+  //   60% {
+  //       transform: translateY(6px);
+  //   }
+  //   80% {
+  //       transform: translateY(2px);
+  //   }
+  //   100% {
+  //       transform: translateY(0);
+  //   }
+  // }
+
+  .thumbnail {
+    background-color:#F4F4F4;
+    .caption {
+      background-color:#fffdf9;
+      border-top:1px solid #e8e8e8;
+      margin:-4px;
+      h1 {
+        text-overflow: ellipsis;
+        overflow: hidden;
+      }
+    }
+  }
+
+  .thumbnail:hover {
+    background-color:#F9F9F9;
+    transition:background-color .3s;
+    > img {
+      animation: jump .5s linear alternate infinite;
+    }
+  }
+
+  /* Shine */
+.thumbnailWrap {
+    overflow: hidden;
+   .thumbnail {
+	    position: relative;
+      &:before {
+        position: absolute;
+        top: 0;
+        left: -75%;
+        z-index: 2;
+        display: block;
+        content: '';
+        width: 50%;
+        height: 100%;
+        background: -webkit-linear-gradient(left, rgba(255,255,255,0) 0%, rgba(255,255,255,.3) 100%);
+        background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,.3) 100%);
+        -webkit-transform: skewX(-25deg);
+        transform: skewX(-25deg);
+    }
+    &:hover::before {
+	    -webkit-animation: shine 1.75s;
+	    animation: shine 1.75s;
+    }
+  }
+}
+
+@-webkit-keyframes shine {
+	100% {
+		left: 125%;
+	}
+}
+@keyframes shine {
+	100% {
+		left: 125%;
+	}
+}

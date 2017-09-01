@@ -1,0 +1,15 @@
+aside {
+    &.hidden {
+       width:0;
+       overflow: hidden;
+     }
+      
+    .input-group {
+      margin:15px 0;
+    }   
+    .btn {
+      border-radius: 0;
+      border-bottom-left-radius: 0 !important;
+      border-top-left-radius: 0 !important;
+    }
+  }
