@@ -1,5 +1,6 @@
-# React-Startpack
-Bare minimum setup for a simple react app. Should save you a lot of time. You are very welcome!!
+# react-redux-starter pokedex like application
+
+React/Redux starter kit. including pokedex like application just for testing/how it works purpose. 
 
 ## Pre-requisites 
 
