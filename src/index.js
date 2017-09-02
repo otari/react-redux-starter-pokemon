@@ -13,16 +13,16 @@
 // ReactDOM.render(node, target);
 //registerServiceWorker();
 
-
 import React from 'react';
-import ReactDOM from "react-dom";
-
+import ReactDOM from 'react-dom';
 
 import Root from './containers/Root';
 
-import configureStore from './store'
+import configureStore from './store/configureStore';
 
-ReactDOM.render(<Root store={configureStore()} />, document.getElementById('root'));
+const store = configureStore(undefined);
+
+ReactDOM.render(<Root store={store} />, document.getElementById('root'));
 
 //import App from './components/App';
 //ReactDOM.render(<App />, document.getElementById('root'));
